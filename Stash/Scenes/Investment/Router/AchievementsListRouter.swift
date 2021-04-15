@@ -23,7 +23,7 @@ class AchievementsListRouter: AchievementsListWireFrame {
             interactor.presenter = presenter
             interactor.achievementService = service
             viewController.presenter = presenter
-            return viewController
+            return UINavigationController(rootViewController: viewController)
         }
         return nil
     }
