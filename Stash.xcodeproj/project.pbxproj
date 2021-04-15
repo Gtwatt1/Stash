@@ -21,6 +21,8 @@
 		5AB7AD0B2628A62A0051696F /* AchievementListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB7AD0A2628A62A0051696F /* AchievementListCell.swift */; };
 		5AB7AD1D2628ACCF0051696F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5AB7AD1F2628ACCF0051696F /* Localizable.strings */; };
 		5AB7AD292628B1560051696F /* AchievementsListPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB7AD282628B1560051696F /* AchievementsListPresenterTests.swift */; };
+		5AB7AD3B2628E8DA0051696F /* AchievementsListInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB7AD3A2628E8DA0051696F /* AchievementsListInteractorTests.swift */; };
+		5AB7AD432628ED760051696F /* Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB7AD422628ED760051696F /* Mocks.swift */; };
 		5AC839722628393C00A9F319 /* AchievementsListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC839712628393C00A9F319 /* AchievementsListPresenter.swift */; };
 		5AC8397A26283C8C00A9F319 /* AchievementsListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC8397926283C8C00A9F319 /* AchievementsListInteractor.swift */; };
 		5AC8397F2628477200A9F319 /* AchievementRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC8397E2628477200A9F319 /* AchievementRepository.swift */; };
@@ -70,6 +72,8 @@
 		5AB7AD1E2628ACCF0051696F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5AB7AD232628AD310051696F /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5AB7AD282628B1560051696F /* AchievementsListPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsListPresenterTests.swift; sourceTree = "<group>"; };
+		5AB7AD3A2628E8DA0051696F /* AchievementsListInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsListInteractorTests.swift; sourceTree = "<group>"; };
+		5AB7AD422628ED760051696F /* Mocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mocks.swift; sourceTree = "<group>"; };
 		5AC839712628393C00A9F319 /* AchievementsListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsListPresenter.swift; sourceTree = "<group>"; };
 		5AC8397926283C8C00A9F319 /* AchievementsListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsListInteractor.swift; sourceTree = "<group>"; };
 		5AC8397E2628477200A9F319 /* AchievementRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementRepository.swift; sourceTree = "<group>"; };
@@ -138,9 +142,11 @@
 		5A301F0B26218D2200EC2347 /* StashTests */ = {
 			isa = PBXGroup;
 			children = (
+				5AB7AD392628E8BA0051696F /* Interactor */,
 				5AB7AD272628B13B0051696F /* Presenter */,
 				5A301F0C26218D2200EC2347 /* StashTests.swift */,
 				5A301F0E26218D2200EC2347 /* Info.plist */,
+				5AB7AD422628ED760051696F /* Mocks.swift */,
 			);
 			path = StashTests;
 			sourceTree = "<group>";
@@ -185,6 +191,14 @@
 				5AB7AD282628B1560051696F /* AchievementsListPresenterTests.swift */,
 			);
 			path = Presenter;
+			sourceTree = "<group>";
+		};
+		5AB7AD392628E8BA0051696F /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				5AB7AD3A2628E8DA0051696F /* AchievementsListInteractorTests.swift */,
+			);
+			path = Interactor;
 			sourceTree = "<group>";
 		};
 		5AC8396F2628391500A9F319 /* Scenes */ = {
@@ -453,7 +467,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				5AB7AD292628B1560051696F /* AchievementsListPresenterTests.swift in Sources */,
+				5AB7AD3B2628E8DA0051696F /* AchievementsListInteractorTests.swift in Sources */,
 				5A301F0D26218D2200EC2347 /* StashTests.swift in Sources */,
+				5AB7AD432628ED760051696F /* Mocks.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

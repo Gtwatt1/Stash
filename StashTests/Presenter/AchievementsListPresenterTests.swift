@@ -31,13 +31,8 @@ class AchievementsListPresenterTest: XCTestCase {
         let view = MockView()
         sut.view = view
 
+        let mockAchievements = Mocks.mockAchievements
         //Act
-        let mockAchievements = [Achievement(id: 1,
-                                          level: "30",
-                                          progress: 30,
-                                          total: 100,
-                                          bgImageURL: "some_url",
-                                          accessible: true)]
         sut.didGetAchievements(achievements: mockAchievements)
 
         //Assert
