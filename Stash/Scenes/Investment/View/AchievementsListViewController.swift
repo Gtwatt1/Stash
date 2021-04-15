@@ -12,6 +12,7 @@ class AchievementsListViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     var presenter: AchievementsListPresenterInput?
+    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     var achievements = [AchievementListViewModel]()
 
     override func viewDidLoad() {
@@ -46,11 +47,15 @@ extension AchievementsListViewController: UITableViewDelegate, UITableViewDataSo
 extension AchievementsListViewController: AchievementsListPresenterOutput {
     func displayAchievements(achievements: [AchievementListViewModel]) {
         self.achievements = achievements
+        loadingIndicator.isHidden = true
         tableView.reloadData()
     }
 
     func displayError(error: String) {
-
+        loadingIndicator.isHidden = true
+        let alertController = UIAlertController(title: "Error", message: error, preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        present(alertController, animated: true, completion: nil)
     }
 
 }

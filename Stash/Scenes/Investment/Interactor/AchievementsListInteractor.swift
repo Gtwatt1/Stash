@@ -23,12 +23,12 @@ class AchievementsListInteractor: AchievementsListInteractorInput {
     weak var presenter: AchievementsListInteractorOutput?
 
     func getAchievements() {
-        achievementService?.getAchievements { (result) in
+        achievementService?.getAchievements { [weak self](result) in
             switch result {
             case .failure(let error):
-                presenter?.didFailToGetAchievements(error: error.localizedDescription)
+                self?.presenter?.didFailToGetAchievements(error: error.localizedDescription)
             case .success(let achievements):
-                presenter?.didGetAchievements(achievements: achievements)
+                self?.presenter?.didGetAchievements(achievements: achievements)
             }
         }
     }

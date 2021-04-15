@@ -9,11 +9,11 @@ import Foundation
 
 protocol AchievementRepository {
 
-    func get(completion: (Result<[Achievement], AchievementError>) -> Void)
+    func get(completion: @escaping (Result<[Achievement], AchievementError>) -> Void)
 }
 
 struct LocalAchievementsListRepository: AchievementRepository {
-    func get(completion: (Result<[Achievement], AchievementError>) -> Void) {
+    func get(completion: @escaping (Result<[Achievement], AchievementError>) -> Void) {
         guard let url = Bundle.main.url(forResource: "achievements", withExtension: "json") else {
             completion(.failure(.fileNotFound))
             return
@@ -21,7 +21,9 @@ struct LocalAchievementsListRepository: AchievementRepository {
         do {
             let data = try Data(contentsOf: url)
             let achievementResponse = try JSONDecoder().decode(AchievementResponse.self, from: data)
-            completion(.success(achievementResponse.achievements))
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                completion(.success(achievementResponse.achievements))
+            }
         } catch {
             completion(.failure(.decodingFailed))
         }

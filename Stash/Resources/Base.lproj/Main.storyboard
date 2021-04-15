@@ -133,14 +133,19 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="WfN-Eo-744"/>
                                 </connections>
                             </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="5g6-gL-7PM">
+                                <rect key="frame" x="188.5" y="456.5" width="37" height="37"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <color key="tintColor" systemColor="systemIndigoColor"/>
                         <constraints>
+                            <constraint firstItem="5g6-gL-7PM" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="Jw0-pa-dtd"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="67U-v9-5rp" secondAttribute="trailing" id="LkT-Vw-Ucz"/>
                             <constraint firstItem="67U-v9-5rp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="U5O-8T-PZG"/>
                             <constraint firstAttribute="bottom" secondItem="67U-v9-5rp" secondAttribute="bottom" id="W63-2J-TLb"/>
+                            <constraint firstItem="5g6-gL-7PM" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="cRv-NK-EAe"/>
                             <constraint firstItem="67U-v9-5rp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="qzw-sl-e2Z"/>
                         </constraints>
                     </view>
@@ -150,6 +155,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="loadingIndicator" destination="5g6-gL-7PM" id="hKS-g9-iRj"/>
                         <outlet property="tableView" destination="67U-v9-5rp" id="RhF-hf-VxU"/>
                     </connections>
                 </viewController>
