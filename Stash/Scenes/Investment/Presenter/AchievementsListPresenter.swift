@@ -16,7 +16,6 @@ protocol AchievementsListPresenterOutput: class {
     func displayError(error: String)
 }
 
-
 class AchievementsListPresenter: AchievementsListPresenterInput {
 
     var interactor: AchievementsListInteractorInput?
@@ -27,9 +26,8 @@ class AchievementsListPresenter: AchievementsListPresenterInput {
     }
 }
 
-
 extension AchievementsListPresenter: AchievementsListInteractorOutput {
-    
+
     func didGetAchievements(achievements: [Achievement]) {
         var achievementsViewModels = [AchievementListViewModel]()
         achievements.forEach {
@@ -42,5 +40,3 @@ extension AchievementsListPresenter: AchievementsListInteractorOutput {
         view?.displayError(error: error)
     }
 }
-
-
