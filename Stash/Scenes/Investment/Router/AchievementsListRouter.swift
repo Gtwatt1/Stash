@@ -14,6 +14,7 @@ protocol AchievementsListWireFrame {
 
 class AchievementsListRouter: AchievementsListWireFrame {
 
+    // Instantiate the AchievementsList Scene with its dependencies
     func assembleModule() -> UIViewController? {
         let mainStoryBoard = UIStoryboard(name: "Main", bundle: nil)
         if let viewController = mainStoryBoard.instantiateViewController(

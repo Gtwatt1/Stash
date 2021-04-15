@@ -7,7 +7,17 @@
 
 import Foundation
 
-class AchievementsListPresenter: AchievementsListPresenterInput, AchievementsListInteractorOutput {
+protocol AchievementsListPresenterInput {
+    func getAchievements()
+}
+
+protocol AchievementsListPresenterOutput: class {
+    func displayAchievements(achievements: [AchievementListViewModel])
+    func displayError(error: String)
+}
+
+
+class AchievementsListPresenter: AchievementsListPresenterInput {
 
     var interactor: AchievementsListInteractorInput?
     weak var view: AchievementsListPresenterOutput?
@@ -15,10 +25,14 @@ class AchievementsListPresenter: AchievementsListPresenterInput, AchievementsLis
     func getAchievements() {
         interactor?.getAchievements()
     }
+}
 
+
+extension AchievementsListPresenter: AchievementsListInteractorOutput {
+    
     func didGetAchievements(achievements: [Achievement]) {
         var achievementsViewModels = [AchievementListViewModel]()
-        achievements.forEach{
+        achievements.forEach {
             achievementsViewModels.append(AchievementListViewModel(achievement: $0))
         }
         view?.displayAchievements(achievements: achievementsViewModels)
@@ -29,12 +43,4 @@ class AchievementsListPresenter: AchievementsListPresenterInput, AchievementsLis
     }
 }
 
-protocol AchievementsListPresenterInput {
 
-    func getAchievements()
-}
-
-protocol AchievementsListPresenterOutput: class {
-    func displayAchievements(achievements: [AchievementListViewModel])
-    func displayError(error: String)
-}
