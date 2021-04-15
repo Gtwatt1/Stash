@@ -20,18 +20,20 @@ struct RemoteAchievementRepository: AchievementRepository {
     }
 }
 
-struct LocalAchievementRepository: AchievementRepository {
+struct LocalAchievementsListRepository: AchievementRepository {
     func get(completion: (Result<[Achievement], AchievementError>) -> ()) {
-        if let url = Bundle.main.url(forResource: "achievements", withExtension: "json") {
-            do {
-                let data = try Data(contentsOf: url)
-                let achievementResponse = try JSONDecoder().decode(AchievementResponse.self, from: data)
-                completion(.success(achievementResponse.achievements))
-            } catch {
-                completion(.failure(.decodingFailed))
-            }
+        guard let url = Bundle.main.url(forResource: "achievements", withExtension: "json") else {
+            completion(.failure(.fileNotFound))
+            return
         }
-        completion(.failure(.fileNotFound))
+        do {
+            let data = try Data(contentsOf: url)
+            let achievementResponse = try JSONDecoder().decode(AchievementResponse.self, from: data)
+            completion(.success(achievementResponse.achievements))
+        } catch {
+            completion(.failure(.decodingFailed))
+        }
     }
-    
 }
+
+

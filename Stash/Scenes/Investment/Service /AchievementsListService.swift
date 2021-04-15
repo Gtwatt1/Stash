@@ -11,7 +11,7 @@ protocol AchievementServiceProtocol {
     func getAchievements(completion: (Result<[Achievement], AchievementError>) -> ()) 
 }
 
-struct AchievementService: AchievementServiceProtocol {
+struct AchievementsListService: AchievementServiceProtocol {
     var repository: AchievementRepository
     
     func getAchievements(completion: (Result<[Achievement], AchievementError>) -> ()) {

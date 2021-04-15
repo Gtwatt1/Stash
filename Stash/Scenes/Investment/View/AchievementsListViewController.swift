@@ -7,19 +7,20 @@
 
 import UIKit
 
-class AchievementViewController: UIViewController {
+class AchievementsListViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     var presenter: AchievementsListPresenterInput?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .red
         presenter?.getAchievements()
     }
     
 }
 
-extension ViewController: UITableViewDelegate, UITableViewDataSource {
+extension AchievementsListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
        return 30
     }
@@ -30,6 +31,17 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
 
+}
+
+extension AchievementsListViewController: AchievementsListPresenterOutput {
+    func displayAchievements(achievements: [Achievement]) {
+        
+    }
+    
+    func displayError(error: String) {
+        
+    }
+    
 }
 
 

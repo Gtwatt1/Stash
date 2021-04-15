@@ -8,11 +8,21 @@
 import Foundation
 
 
-class AchievementsListPresenter: AchievementsListPresenterInput {
+class AchievementsListPresenter: AchievementsListPresenterInput, AchievementsListInteractorOutput {
     
     var interactor: AchievementsListInteractorInput?
+    var view: AchievementsListPresenterOutput?
+    
     func getAchievements() {
-        
+        interactor?.getAchievements()
+    }
+    
+    func didGetAchievements(achievements: [Achievement]) {
+        view?.displayAchievements(achievements: achievements)
+    }
+    
+    func didFailToGetAchievements(error: String) {
+        view?.displayError(error: error)
     }
 }
 
@@ -20,4 +30,10 @@ class AchievementsListPresenter: AchievementsListPresenterInput {
 protocol AchievementsListPresenterInput {
     
     func getAchievements()
+}
+
+
+protocol AchievementsListPresenterOutput {
+    func displayAchievements(achievements: [Achievement])
+    func displayError(error: String)
 }

@@ -12,25 +12,24 @@ protocol AchievementsListInteractorInput {
     func getAchievements()
 }
 
-struct AchievementsListInteractor: AchievementsListInteractorInput {
-    
-    var achievementService: AchievementServiceProtocol
-    var presenter: AchievementsListInteractorOutput
-    
-    func getAchievements() {
-        achievementService.getAchievements { (result) in
-            switch result {
-            case .failure(let error):
-                presenter.didFailToGetAchievements(error: error.localizedDescription)
-            case .success(let achievements):
-                presenter.didGetAchievements(achievements: achievements)
-            }
-        }
-    }
-}
-
-
 protocol AchievementsListInteractorOutput {
     func didGetAchievements(achievements: [Achievement])
     func didFailToGetAchievements(error: String)
+}
+
+class AchievementsListInteractor: AchievementsListInteractorInput {
+    
+    var achievementService: AchievementServiceProtocol?
+    var presenter: AchievementsListInteractorOutput?
+    
+    func getAchievements() {
+        achievementService?.getAchievements { (result) in
+            switch result {
+            case .failure(let error):
+                presenter?.didFailToGetAchievements(error: error.localizedDescription)
+            case .success(let achievements):
+                presenter?.didGetAchievements(achievements: achievements)
+            }
+        }
+    }
 }
