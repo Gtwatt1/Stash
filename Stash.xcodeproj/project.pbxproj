@@ -17,6 +17,9 @@
 		5A301F1826218D2200EC2347 /* StashUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A301F1726218D2200EC2347 /* StashUITests.swift */; };
 		5AA2679026285C9E009FCEA4 /* AchievementsListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA2678F26285C9E009FCEA4 /* AchievementsListRouter.swift */; };
 		5AA267AB26286CAF009FCEA4 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 5AA267AA26286CAF009FCEA4 /* Kingfisher */; };
+		5AB7AD062628A2F30051696F /* AchievementListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB7AD052628A2F30051696F /* AchievementListViewModel.swift */; };
+		5AB7AD0B2628A62A0051696F /* AchievementListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB7AD0A2628A62A0051696F /* AchievementListCell.swift */; };
+		5AB7AD1D2628ACCF0051696F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5AB7AD1F2628ACCF0051696F /* Localizable.strings */; };
 		5AC839722628393C00A9F319 /* AchievementsListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC839712628393C00A9F319 /* AchievementsListPresenter.swift */; };
 		5AC8397A26283C8C00A9F319 /* AchievementsListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC8397926283C8C00A9F319 /* AchievementsListInteractor.swift */; };
 		5AC8397F2628477200A9F319 /* AchievementRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC8397E2628477200A9F319 /* AchievementRepository.swift */; };
@@ -59,6 +62,12 @@
 		5A301F1726218D2200EC2347 /* StashUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StashUITests.swift; sourceTree = "<group>"; };
 		5A301F1926218D2200EC2347 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5AA2678F26285C9E009FCEA4 /* AchievementsListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsListRouter.swift; sourceTree = "<group>"; };
+		5AB7AD052628A2F30051696F /* AchievementListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementListViewModel.swift; sourceTree = "<group>"; };
+		5AB7AD0A2628A62A0051696F /* AchievementListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementListCell.swift; sourceTree = "<group>"; };
+		5AB7AD182628AC330051696F /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		5AB7AD192628AC330051696F /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
+		5AB7AD1E2628ACCF0051696F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5AB7AD232628AD310051696F /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5AC839712628393C00A9F319 /* AchievementsListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsListPresenter.swift; sourceTree = "<group>"; };
 		5AC8397926283C8C00A9F319 /* AchievementsListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsListInteractor.swift; sourceTree = "<group>"; };
 		5AC8397E2628477200A9F319 /* AchievementRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementRepository.swift; sourceTree = "<group>"; };
@@ -159,6 +168,14 @@
 			path = Application;
 			sourceTree = "<group>";
 		};
+		5AB7AD122628A98B0051696F /* localisation */ = {
+			isa = PBXGroup;
+			children = (
+				5AB7AD1F2628ACCF0051696F /* Localizable.strings */,
+			);
+			path = localisation;
+			sourceTree = "<group>";
+		};
 		5AC8396F2628391500A9F319 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
@@ -212,8 +229,10 @@
 		5AC8399E26284EA900A9F319 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5AB7AD122628A98B0051696F /* localisation */,
 				5AC8398626284AE200A9F319 /* Achievement.swift */,
 				5AC8399F26284EBF00A9F319 /* AchievementError.swift */,
+				5AB7AD052628A2F30051696F /* AchievementListViewModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -230,6 +249,7 @@
 			isa = PBXGroup;
 			children = (
 				5A301EF926218D2000EC2347 /* AchievementsListViewController.swift */,
+				5AB7AD0A2628A62A0051696F /* AchievementListCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -331,6 +351,7 @@
 			knownRegions = (
 				en,
 				Base,
+				fr,
 			);
 			mainGroup = 5A301EE926218D1F00EC2347;
 			packageReferences = (
@@ -352,6 +373,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5AB7AD1D2628ACCF0051696F /* Localizable.strings in Resources */,
 				5A301F0226218D2200EC2347 /* LaunchScreen.storyboard in Resources */,
 				5AC8398D26284BCC00A9F319 /* achievements.json in Resources */,
 				5A301EFF26218D2200EC2347 /* Assets.xcassets in Resources */,
@@ -401,10 +423,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				5AC8397A26283C8C00A9F319 /* AchievementsListInteractor.swift in Sources */,
+				5AB7AD0B2628A62A0051696F /* AchievementListCell.swift in Sources */,
 				5A301EFA26218D2000EC2347 /* AchievementsListViewController.swift in Sources */,
 				5AC8398726284AE200A9F319 /* Achievement.swift in Sources */,
 				5AC839A026284EBF00A9F319 /* AchievementError.swift in Sources */,
 				5AC839722628393C00A9F319 /* AchievementsListPresenter.swift in Sources */,
+				5AB7AD062628A2F30051696F /* AchievementListViewModel.swift in Sources */,
 				5AC8397F2628477200A9F319 /* AchievementRepository.swift in Sources */,
 				5AA2679026285C9E009FCEA4 /* AchievementsListRouter.swift in Sources */,
 				5AC8399326284E4400A9F319 /* AchievementsListService.swift in Sources */,
@@ -449,6 +473,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				5A301EFC26218D2000EC2347 /* Base */,
+				5AB7AD192628AC330051696F /* fr */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -457,8 +482,18 @@
 			isa = PBXVariantGroup;
 			children = (
 				5A301F0126218D2200EC2347 /* Base */,
+				5AB7AD182628AC330051696F /* fr */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		5AB7AD1F2628ACCF0051696F /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5AB7AD1E2628ACCF0051696F /* en */,
+				5AB7AD232628AD310051696F /* fr */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -468,6 +503,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -529,6 +565,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

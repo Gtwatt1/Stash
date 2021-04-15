@@ -1,0 +1,19 @@
+
+/* Class = "UILabel"; text = "50pts"; ObjectID = "chZ-DE-GEH"; */
+"chZ-DE-GEH.text" = "50pts";
+
+/* Class = "UINavigationItem"; title = "Smart Investment"; ObjectID = "fUR-P0-Xu1"; */
+"fUR-P0-Xu1.title" = "Investissement intelligent";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "kCb-94-dhM"; */
+"kCb-94-dhM.title" = "Item";
+
+/* Class = "UILabel"; text = "Level"; ObjectID = "meB-mQ-OJV"; */
+"meB-mQ-OJV.text" = "Niveau";
+
+/* Class = "UILabel"; text = "1"; ObjectID = "pLN-hO-H8v"; */
+"pLN-hO-H8v.text" = "1";
+
+/* Class = "UILabel"; text = "10pts"; ObjectID = "t8L-SF-dn0"; */
+"t8L-SF-dn0.text" = "10pts";
+

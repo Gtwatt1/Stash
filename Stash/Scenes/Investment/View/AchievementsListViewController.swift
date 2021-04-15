@@ -12,7 +12,7 @@ class AchievementsListViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     var presenter: AchievementsListPresenterInput?
-    var achievements = [Achievement]()
+    var achievements = [AchievementListViewModel]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +34,7 @@ extension AchievementsListViewController: UITableViewDelegate, UITableViewDataSo
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(
-                withIdentifier: "cell", for: indexPath) as? AchievementCell else {
+                withIdentifier: "cell", for: indexPath) as? AchievementListCell else {
             fatalError("Cell not found")
         }
         cell.setupCell(achievements[indexPath.row])
@@ -44,7 +44,7 @@ extension AchievementsListViewController: UITableViewDelegate, UITableViewDataSo
 }
 
 extension AchievementsListViewController: AchievementsListPresenterOutput {
-    func displayAchievements(achievements: [Achievement]) {
+    func displayAchievements(achievements: [AchievementListViewModel]) {
         self.achievements = achievements
         tableView.reloadData()
     }
@@ -53,26 +53,4 @@ extension AchievementsListViewController: AchievementsListPresenterOutput {
 
     }
 
-}
-
-class AchievementCell: UITableViewCell {
-
-    @IBOutlet weak var backgroundImage: UIImageView!
-    @IBOutlet weak var levelProgress: UIProgressView!
-    @IBOutlet weak var totalProgressLabel: UILabel!
-    @IBOutlet weak var currentProgressLabel: UILabel!
-    @IBOutlet weak var levelLabel: UILabel!
-    @IBOutlet weak var overlayView: UIView!
-
-    func setupCell(_ achievement: Achievement) {
-        levelProgress.transform = levelProgress.transform.scaledBy(x: 1, y: 2)
-        totalProgressLabel.text = "\(achievement.total) pts"
-        currentProgressLabel.text = "\(achievement.progress) pts"
-        levelLabel.text = achievement.level
-        let imageURL = URL(string: achievement.bgImageURL)
-        backgroundImage.kf.setImage(with: imageURL)
-        let progress = Float(achievement.progress) / Float(achievement.total)
-        levelProgress.progress = progress
-        overlayView.isHidden = achievement.accessible
-    }
 }

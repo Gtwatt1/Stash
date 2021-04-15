@@ -17,7 +17,11 @@ class AchievementsListPresenter: AchievementsListPresenterInput, AchievementsLis
     }
 
     func didGetAchievements(achievements: [Achievement]) {
-        view?.displayAchievements(achievements: achievements)
+        var achievementsViewModels = [AchievementListViewModel]()
+        achievements.forEach{
+            achievementsViewModels.append(AchievementListViewModel(achievement: $0))
+        }
+        view?.displayAchievements(achievements: achievementsViewModels)
     }
 
     func didFailToGetAchievements(error: String) {
@@ -31,6 +35,6 @@ protocol AchievementsListPresenterInput {
 }
 
 protocol AchievementsListPresenterOutput: class {
-    func displayAchievements(achievements: [Achievement])
+    func displayAchievements(achievements: [AchievementListViewModel])
     func displayError(error: String)
 }
