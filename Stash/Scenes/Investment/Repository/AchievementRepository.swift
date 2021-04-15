@@ -8,20 +8,19 @@
 import Foundation
 
 protocol AchievementRepository {
-    
-    func get(completion: (Result<[Achievement], AchievementError>) -> ())
+
+    func get(completion: (Result<[Achievement], AchievementError>) -> Void)
 }
 
-
 struct RemoteAchievementRepository: AchievementRepository {
-    
-    func get(completion: (Result<[Achievement], AchievementError>) -> ())  {
-        
+
+    func get(completion: (Result<[Achievement], AchievementError>) -> Void) {
+
     }
 }
 
 struct LocalAchievementsListRepository: AchievementRepository {
-    func get(completion: (Result<[Achievement], AchievementError>) -> ()) {
+    func get(completion: (Result<[Achievement], AchievementError>) -> Void) {
         guard let url = Bundle.main.url(forResource: "achievements", withExtension: "json") else {
             completion(.failure(.fileNotFound))
             return
@@ -35,5 +34,3 @@ struct LocalAchievementsListRepository: AchievementRepository {
         }
     }
 }
-
-

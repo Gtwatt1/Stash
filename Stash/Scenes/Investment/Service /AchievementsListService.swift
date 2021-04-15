@@ -8,13 +8,13 @@
 import Foundation
 
 protocol AchievementServiceProtocol {
-    func getAchievements(completion: (Result<[Achievement], AchievementError>) -> ()) 
+    func getAchievements(completion: (Result<[Achievement], AchievementError>) -> Void)
 }
 
 struct AchievementsListService: AchievementServiceProtocol {
     var repository: AchievementRepository
-    
-    func getAchievements(completion: (Result<[Achievement], AchievementError>) -> ()) {
+
+    func getAchievements(completion: (Result<[Achievement], AchievementError>) -> Void) {
         repository.get(completion: completion)
     }
 }

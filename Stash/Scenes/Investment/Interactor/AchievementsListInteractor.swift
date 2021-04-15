@@ -8,7 +8,7 @@
 import Foundation
 
 protocol AchievementsListInteractorInput {
-    
+
     func getAchievements()
 }
 
@@ -18,10 +18,10 @@ protocol AchievementsListInteractorOutput: class {
 }
 
 class AchievementsListInteractor: AchievementsListInteractorInput {
-    
+
     var achievementService: AchievementServiceProtocol?
     weak var presenter: AchievementsListInteractorOutput?
-    
+
     func getAchievements() {
         achievementService?.getAchievements { (result) in
             switch result {

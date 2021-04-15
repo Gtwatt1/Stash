@@ -8,8 +8,12 @@
 import Foundation
 import UIKit
 
+protocol AchievementsListWireFrame {
+    func assembleModule() -> UIViewController?
+}
+
 class AchievementsListRouter: AchievementsListWireFrame {
-    
+
     func assembleModule() -> UIViewController? {
         let mainStoryBoard = UIStoryboard(name: "Main", bundle: nil)
         if let viewController = mainStoryBoard.instantiateViewController(
@@ -27,8 +31,4 @@ class AchievementsListRouter: AchievementsListWireFrame {
         }
         return nil
     }
-}
-
-protocol AchievementsListWireFrame {
-    func assembleModule() -> UIViewController?
 }
