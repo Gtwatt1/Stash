@@ -11,7 +11,7 @@ import Foundation
 class AchievementsListPresenter: AchievementsListPresenterInput, AchievementsListInteractorOutput {
     
     var interactor: AchievementsListInteractorInput?
-    var view: AchievementsListPresenterOutput?
+    weak var view: AchievementsListPresenterOutput?
     
     func getAchievements() {
         interactor?.getAchievements()
@@ -33,7 +33,7 @@ protocol AchievementsListPresenterInput {
 }
 
 
-protocol AchievementsListPresenterOutput {
+protocol AchievementsListPresenterOutput: class {
     func displayAchievements(achievements: [Achievement])
     func displayError(error: String)
 }

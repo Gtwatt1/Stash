@@ -12,7 +12,7 @@ protocol AchievementsListInteractorInput {
     func getAchievements()
 }
 
-protocol AchievementsListInteractorOutput {
+protocol AchievementsListInteractorOutput: class {
     func didGetAchievements(achievements: [Achievement])
     func didFailToGetAchievements(error: String)
 }
@@ -20,7 +20,7 @@ protocol AchievementsListInteractorOutput {
 class AchievementsListInteractor: AchievementsListInteractorInput {
     
     var achievementService: AchievementServiceProtocol?
-    var presenter: AchievementsListInteractorOutput?
+    weak var presenter: AchievementsListInteractorOutput?
     
     func getAchievements() {
         achievementService?.getAchievements { (result) in
