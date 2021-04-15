@@ -7,9 +7,8 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class AchievementViewController: UIViewController {
 
-   
     @IBOutlet weak var tableView: UITableView!
     var presenter: AchievementsListPresenterInput?
     
