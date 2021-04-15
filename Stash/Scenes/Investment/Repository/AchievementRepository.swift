@@ -12,13 +12,6 @@ protocol AchievementRepository {
     func get(completion: (Result<[Achievement], AchievementError>) -> Void)
 }
 
-struct RemoteAchievementRepository: AchievementRepository {
-
-    func get(completion: (Result<[Achievement], AchievementError>) -> Void) {
-
-    }
-}
-
 struct LocalAchievementsListRepository: AchievementRepository {
     func get(completion: (Result<[Achievement], AchievementError>) -> Void) {
         guard let url = Bundle.main.url(forResource: "achievements", withExtension: "json") else {
@@ -32,5 +25,12 @@ struct LocalAchievementsListRepository: AchievementRepository {
         } catch {
             completion(.failure(.decodingFailed))
         }
+    }
+}
+
+struct RemoteAchievementRepository: AchievementRepository {
+
+    func get(completion: (Result<[Achievement], AchievementError>) -> Void) {
+
     }
 }

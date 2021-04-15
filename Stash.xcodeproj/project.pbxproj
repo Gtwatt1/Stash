@@ -144,7 +144,7 @@
 		5A301F0B26218D2200EC2347 /* StashTests */ = {
 			isa = PBXGroup;
 			children = (
-				5AB7AD472628F1420051696F /* Reposiotory */,
+				5AB7AD472628F1420051696F /* Service */,
 				5AB7AD392628E8BA0051696F /* Interactor */,
 				5AB7AD272628B13B0051696F /* Presenter */,
 				5A301F0C26218D2200EC2347 /* StashTests.swift */,
@@ -204,12 +204,12 @@
 			path = Interactor;
 			sourceTree = "<group>";
 		};
-		5AB7AD472628F1420051696F /* Reposiotory */ = {
+		5AB7AD472628F1420051696F /* Service */ = {
 			isa = PBXGroup;
 			children = (
 				5AB7AD482628F15A0051696F /* AchievementsListServiceTests.swift */,
 			);
-			path = Reposiotory;
+			path = Service;
 			sourceTree = "<group>";
 		};
 		5AC8396F2628391500A9F319 /* Scenes */ = {
