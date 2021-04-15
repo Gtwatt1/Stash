@@ -24,6 +24,8 @@
 		5AB7AD3B2628E8DA0051696F /* AchievementsListInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB7AD3A2628E8DA0051696F /* AchievementsListInteractorTests.swift */; };
 		5AB7AD432628ED760051696F /* Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB7AD422628ED760051696F /* Mocks.swift */; };
 		5AB7AD492628F15A0051696F /* AchievementsListServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB7AD482628F15A0051696F /* AchievementsListServiceTests.swift */; };
+		5AB7AD622628FAB50051696F /* AchievementsListViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB7AD612628FAB50051696F /* AchievementsListViewControllerTests.swift */; };
+		5AB7AD712628FB550051696F /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 5AB7AD702628FB550051696F /* SnapshotTesting */; };
 		5AC839722628393C00A9F319 /* AchievementsListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC839712628393C00A9F319 /* AchievementsListPresenter.swift */; };
 		5AC8397A26283C8C00A9F319 /* AchievementsListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC8397926283C8C00A9F319 /* AchievementsListInteractor.swift */; };
 		5AC8397F2628477200A9F319 /* AchievementRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC8397E2628477200A9F319 /* AchievementRepository.swift */; };
@@ -76,6 +78,7 @@
 		5AB7AD3A2628E8DA0051696F /* AchievementsListInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsListInteractorTests.swift; sourceTree = "<group>"; };
 		5AB7AD422628ED760051696F /* Mocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mocks.swift; sourceTree = "<group>"; };
 		5AB7AD482628F15A0051696F /* AchievementsListServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsListServiceTests.swift; sourceTree = "<group>"; };
+		5AB7AD612628FAB50051696F /* AchievementsListViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsListViewControllerTests.swift; sourceTree = "<group>"; };
 		5AC839712628393C00A9F319 /* AchievementsListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsListPresenter.swift; sourceTree = "<group>"; };
 		5AC8397926283C8C00A9F319 /* AchievementsListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsListInteractor.swift; sourceTree = "<group>"; };
 		5AC8397E2628477200A9F319 /* AchievementRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementRepository.swift; sourceTree = "<group>"; };
@@ -98,6 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5AB7AD712628FB550051696F /* SnapshotTesting in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,6 +148,7 @@
 		5A301F0B26218D2200EC2347 /* StashTests */ = {
 			isa = PBXGroup;
 			children = (
+				5AB7AD602628FA890051696F /* View */,
 				5AB7AD472628F1420051696F /* Service */,
 				5AB7AD392628E8BA0051696F /* Interactor */,
 				5AB7AD272628B13B0051696F /* Presenter */,
@@ -210,6 +215,14 @@
 				5AB7AD482628F15A0051696F /* AchievementsListServiceTests.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		5AB7AD602628FA890051696F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5AB7AD612628FAB50051696F /* AchievementsListViewControllerTests.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		5AC8396F2628391500A9F319 /* Scenes */ = {
@@ -336,6 +349,9 @@
 				5A301F0A26218D2200EC2347 /* PBXTargetDependency */,
 			);
 			name = StashTests;
+			packageProductDependencies = (
+				5AB7AD702628FB550051696F /* SnapshotTesting */,
+			);
 			productName = StashTests;
 			productReference = 5A301F0826218D2200EC2347 /* StashTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -392,6 +408,7 @@
 			mainGroup = 5A301EE926218D1F00EC2347;
 			packageReferences = (
 				5AA267A926286CAF009FCEA4 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				5AB7AD6F2628FB550051696F /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */,
 			);
 			productRefGroup = 5A301EF326218D2000EC2347 /* Products */;
 			projectDirPath = "";
@@ -481,6 +498,7 @@
 				5AB7AD492628F15A0051696F /* AchievementsListServiceTests.swift in Sources */,
 				5AB7AD3B2628E8DA0051696F /* AchievementsListInteractorTests.swift in Sources */,
 				5A301F0D26218D2200EC2347 /* StashTests.swift in Sources */,
+				5AB7AD622628FAB50051696F /* AchievementsListViewControllerTests.swift in Sources */,
 				5AB7AD432628ED760051696F /* Mocks.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -823,6 +841,14 @@
 				minimumVersion = 6.2.1;
 			};
 		};
+		5AB7AD6F2628FB550051696F /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-snapshot-testing.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.8.2;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -830,6 +856,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 5AA267A926286CAF009FCEA4 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		5AB7AD702628FB550051696F /* SnapshotTesting */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5AB7AD6F2628FB550051696F /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
+			productName = SnapshotTesting;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
