@@ -27,6 +27,7 @@ struct Achievement: Codable {
         case bgImageURL = "bg_image_url"
         case accessible
     }
+    
 }
 
 // MARK: - Overview
