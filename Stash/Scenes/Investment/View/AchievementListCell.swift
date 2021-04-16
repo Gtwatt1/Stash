@@ -101,10 +101,12 @@ class AchievementListCell: UITableViewCell {
         backgroundImage.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -16).isActive = true
         backgroundImage.heightAnchor.constraint(equalToConstant: 220).isActive = true
 
-        currentProgressLabel.leadingAnchor.constraint(equalTo: backgroundImage.leadingAnchor, constant: 16).isActive = true
+        currentProgressLabel.leadingAnchor.constraint(equalTo: backgroundImage.leadingAnchor,
+                                                      constant: 16).isActive = true
         currentProgressLabel.centerYAnchor.constraint(equalTo: totalProgressLabel.centerYAnchor).isActive = true
 
-        totalProgressLabel.trailingAnchor.constraint(equalTo: backgroundImage.trailingAnchor, constant: -16).isActive = true
+        totalProgressLabel.trailingAnchor.constraint(equalTo: backgroundImage.trailingAnchor,
+                                                     constant: -16).isActive = true
         totalProgressLabel.bottomAnchor.constraint(equalTo: backgroundImage.bottomAnchor, constant: -16).isActive = true
 
         levelProgress.leadingAnchor.constraint(equalTo: backgroundImage.leadingAnchor, constant: 16).isActive = true

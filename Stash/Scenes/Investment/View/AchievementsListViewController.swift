@@ -25,7 +25,10 @@ class AchievementsListViewController: UIViewController {
     func configureNavigationBar() {
         navigationItem.title = NSLocalizedString("NavTitle", comment: "")
         let rightBarImage =  UIImage(systemName: "info.circle")?.withTintColor(.white, renderingMode: .alwaysOriginal)
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: rightBarImage, style: .plain, target: self, action: nil)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: rightBarImage,
+                                                            style: .plain,
+                                                            target: self,
+                                                            action: nil)
         navigationController?.navigationBar.barTintColor = .systemPurple
         navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
     }
