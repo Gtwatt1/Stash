@@ -10,20 +10,45 @@ import Kingfisher
 
 class AchievementsListViewController: UIViewController {
 
-    @IBOutlet weak var tableView: UITableView!
-    var presenter: AchievementsListPresenterInput?
-    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
+    let tableView = UITableView()
+    let loadingIndicator = UIActivityIndicatorView(style: .large)
     var achievements = [AchievementListViewModel]()
+    var presenter: AchievementsListPresenterInput?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         configureNavigationBar()
         presenter?.getAchievements()
+        setup()
     }
 
     func configureNavigationBar() {
+        navigationItem.title = NSLocalizedString("NavTitle", comment: "")
+        let rightBarImage =  UIImage(systemName: "info.circle")?.withTintColor(.white, renderingMode: .alwaysOriginal)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: rightBarImage, style: .plain, target: self, action: nil)
         navigationController?.navigationBar.barTintColor = .systemPurple
         navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
+    }
+
+    func setup() {
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.separatorStyle = .none
+        loadingIndicator.startAnimating()
+
+        [tableView, loadingIndicator].forEach {
+            view.addSubview($0)
+            $0.translatesAutoresizingMaskIntoConstraints = false
+        }
+        tableView.register(AchievementListCell.self, forCellReuseIdentifier: "cell")
+
+        tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        tableView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+
+        loadingIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        loadingIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
     }
 
 }
